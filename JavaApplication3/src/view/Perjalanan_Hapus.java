@@ -11,7 +11,7 @@ import javax.swing.JMenu;
 
 /**
  *
- * @author Amalia
+ * @author 
  */
 public class Perjalanan_Hapus extends javax.swing.JFrame {
 
