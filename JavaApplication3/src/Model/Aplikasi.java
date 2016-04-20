@@ -99,4 +99,8 @@ public class Aplikasi {
     public String[] getListIdPelanggan() {
         return data.getListIDPelanggan();
     }
+
+    public void updatePelanggan(String nama, String alamat, String pil) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
