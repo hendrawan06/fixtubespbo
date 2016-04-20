@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JMenu;
 import javax.swing.JRadioButton;
 
 /**
@@ -17,6 +18,23 @@ import javax.swing.JRadioButton;
  */
 public class Petugas_Tambah extends javax.swing.JFrame {
 
+    public JMenu getEdit() {
+        return Edit;
+    }
+
+    public JMenu getHapus() {
+        return Hapus;
+    }
+
+    public JMenu getTambah() {
+        return Tambah;
+    }
+
+    public JMenu getTampil() {
+        return Tampil;
+    }
+
+    
     public JButton getBtnAdd() {
         return BtnAdd;
     }
@@ -44,10 +62,6 @@ public class Petugas_Tambah extends javax.swing.JFrame {
     public JRadioButton getJk2() {
         return Jk2;
     }
-
-    public ButtonGroup getButtonGroup1() {
-        return buttonGroup1;
-    }
     
     public String getAlamat(){
         return Alamatpet.getText();
@@ -61,13 +75,13 @@ public class Petugas_Tambah extends javax.swing.JFrame {
         BtnAdd.addActionListener(e);
         Jk1.addActionListener(e);
         Jk2.addActionListener(e);
+        Tambah.addActionListener(e);
+        Edit.addActionListener(e);
+        Hapus.addActionListener(e);
+        Tampil.addActionListener(e);            
     }
     
-    public void addAdapter(MouseAdapter e){
-        BtnAdd.addMouseListener(e);
-        Jk1.addMouseListener(e);
-        Jk2.addMouseListener(e);
-    }
+
     
     /**
      * Creates new form Petugas_Tambah
@@ -117,10 +131,10 @@ public class Petugas_Tambah extends javax.swing.JFrame {
         Jk1 = new javax.swing.JRadioButton();
         Jk2 = new javax.swing.JRadioButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
+        Tambah = new javax.swing.JMenu();
+        Edit = new javax.swing.JMenu();
+        Hapus = new javax.swing.JMenu();
+        Tampil = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
 
@@ -170,17 +184,17 @@ public class Petugas_Tambah extends javax.swing.JFrame {
             }
         });
 
-        jMenu3.setText("Tambah");
-        jMenuBar1.add(jMenu3);
+        Tambah.setText("Tambah");
+        jMenuBar1.add(Tambah);
 
-        jMenu4.setText("Edit");
-        jMenuBar1.add(jMenu4);
+        Edit.setText("Edit");
+        jMenuBar1.add(Edit);
 
-        jMenu5.setText("Hapus");
-        jMenuBar1.add(jMenu5);
+        Hapus.setText("Hapus");
+        jMenuBar1.add(Hapus);
 
-        jMenu6.setText("Tampil");
-        jMenuBar1.add(jMenu6);
+        Tampil.setText("Tampil");
+        jMenuBar1.add(Tampil);
 
         setJMenuBar(jMenuBar1);
 
@@ -292,10 +306,14 @@ public class Petugas_Tambah extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea Alamatpet;
     private javax.swing.JButton BtnAdd;
+    private javax.swing.JMenu Edit;
+    private javax.swing.JMenu Hapus;
     private javax.swing.JTextField Idpet;
     private javax.swing.JRadioButton Jk1;
     private javax.swing.JRadioButton Jk2;
     private javax.swing.JTextField Namapet;
+    private javax.swing.JMenu Tambah;
+    private javax.swing.JMenu Tampil;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup10;
     private javax.swing.ButtonGroup buttonGroup11;
@@ -314,10 +332,6 @@ public class Petugas_Tambah extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane2;

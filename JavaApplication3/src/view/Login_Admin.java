@@ -49,7 +49,7 @@ public class Login_Admin extends javax.swing.JFrame {
         return Pass.getText();
     }
     
-    public void setPassword(String Pass){
+    public void setPassword(String Password){
         Pass.setText(Password);
     }
     

@@ -5,12 +5,48 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JMenu;
+import javax.swing.JTable;
+
 /**
  *
  * @author Amalia
  */
 public class PaketWisata_Tampilan extends javax.swing.JFrame {
 
+    public JButton getBack() {
+        return Back;
+    }
+
+    public JMenu getEdit() {
+        return Edit;
+    }
+
+    public JMenu getHapus() {
+        return Hapus;
+    }
+
+    public JTable getTablePaket() {
+        return TablePaket;
+    }
+
+    public JMenu getTambah() {
+        return Tambah;
+    }
+
+    public JMenu getTampil() {
+        return Tampil;
+    }
+
+    public void addListener(ActionListener e){
+        Tambah.addActionListener(e);
+        Edit.addActionListener(e);
+        Hapus.addActionListener(e);
+        Tampil.addActionListener(e); 
+        Back.addActionListener(e);
+    }
     /**
      * Creates new form PaketWisata_Tampilan
      */
@@ -29,20 +65,20 @@ public class PaketWisata_Tampilan extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        TablePaket = new javax.swing.JTable();
+        Back = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
+        Tambah = new javax.swing.JMenu();
+        Edit = new javax.swing.JMenu();
+        Hapus = new javax.swing.JMenu();
+        Tampil = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aplikasi Biro Perjalanan");
 
         jLabel1.setText("Data Paket Wisata");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablePaket.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -65,21 +101,21 @@ public class PaketWisata_Tampilan extends javax.swing.JFrame {
                 "Id Paket", "Nama Paket", "Total Harga"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TablePaket);
 
-        jButton1.setText("<-- Kembali ke Halaman Utama");
+        Back.setText("<-- Kembali ke Halaman Utama");
 
-        jMenu1.setText("Tambah");
-        jMenuBar1.add(jMenu1);
+        Tambah.setText("Tambah");
+        jMenuBar1.add(Tambah);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        Edit.setText("Edit");
+        jMenuBar1.add(Edit);
 
-        jMenu3.setText("Hapus");
-        jMenuBar1.add(jMenu3);
+        Hapus.setText("Hapus");
+        jMenuBar1.add(Hapus);
 
-        jMenu4.setText("Tampil");
-        jMenuBar1.add(jMenu4);
+        Tampil.setText("Tampil");
+        jMenuBar1.add(Tampil);
 
         setJMenuBar(jMenuBar1);
 
@@ -97,7 +133,7 @@ public class PaketWisata_Tampilan extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(109, 109, 109)
-                        .addComponent(jButton1)))
+                        .addComponent(Back)))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -108,7 +144,7 @@ public class PaketWisata_Tampilan extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(Back)
                 .addContainerGap())
         );
 
@@ -118,47 +154,47 @@ public class PaketWisata_Tampilan extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PaketWisata_Tampilan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PaketWisata_Tampilan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PaketWisata_Tampilan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PaketWisata_Tampilan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PaketWisata_Tampilan().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(PaketWisata_Tampilan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(PaketWisata_Tampilan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(PaketWisata_Tampilan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(PaketWisata_Tampilan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new PaketWisata_Tampilan().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Back;
+    private javax.swing.JMenu Edit;
+    private javax.swing.JMenu Hapus;
+    private javax.swing.JTable TablePaket;
+    private javax.swing.JMenu Tambah;
+    private javax.swing.JMenu Tampil;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

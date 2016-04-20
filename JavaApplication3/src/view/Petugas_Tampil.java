@@ -5,12 +5,54 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JMenu;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+
 /**
  *
  * @author Name
  */
 public class Petugas_Tampil extends javax.swing.JFrame {
 
+    public JButton getBack() {
+        return Back;
+    }
+
+    public JMenu getEdit() {
+        return Edit;
+    }
+
+    public JMenu getHapus() {
+        return Hapus;
+    }
+
+    public JTable getTablePet() {
+        return TablePet;
+    }
+
+    public JMenu getTambah() {
+        return Tambah;
+    }
+
+    public JMenu getTampil() {
+        return Tampil;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void addListener(ActionListener e){
+        Back.addActionListener(e);
+        Tambah.addActionListener(e);
+        Edit.addActionListener(e);
+        Hapus.addActionListener(e);
+        Tampil.addActionListener(e);  
+    }
     /**
      * Creates new form Petugas_Tampil
      */
@@ -29,20 +71,20 @@ public class Petugas_Tampil extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        TablePet = new javax.swing.JTable();
+        Back = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
+        Tambah = new javax.swing.JMenu();
+        Edit = new javax.swing.JMenu();
+        Hapus = new javax.swing.JMenu();
+        Tampil = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aplikasi Biro Perjalanan");
 
         jLabel1.setText(" Data Petugas");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablePet.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -66,21 +108,21 @@ public class Petugas_Tampil extends javax.swing.JFrame {
                 "Id Petugas", "Nama", "Jenis Kelamin", "Alamat"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TablePet);
 
-        jButton1.setText("<-- Kembali ke Halaman Utama");
+        Back.setText("<-- Kembali ke Halaman Utama");
 
-        jMenu3.setText("Tambah");
-        jMenuBar1.add(jMenu3);
+        Tambah.setText("Tambah");
+        jMenuBar1.add(Tambah);
 
-        jMenu4.setText("Edit");
-        jMenuBar1.add(jMenu4);
+        Edit.setText("Edit");
+        jMenuBar1.add(Edit);
 
-        jMenu5.setText("Hapus");
-        jMenuBar1.add(jMenu5);
+        Hapus.setText("Hapus");
+        jMenuBar1.add(Hapus);
 
-        jMenu6.setText("Tampil");
-        jMenuBar1.add(jMenu6);
+        Tampil.setText("Tampil");
+        jMenuBar1.add(Tampil);
 
         setJMenuBar(jMenuBar1);
 
@@ -100,7 +142,7 @@ public class Petugas_Tampil extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(108, 108, 108)
-                .addComponent(jButton1)
+                .addComponent(Back)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -111,7 +153,7 @@ public class Petugas_Tampil extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(Back)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -121,48 +163,52 @@ public class Petugas_Tampil extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Petugas_Tampil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Petugas_Tampil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Petugas_Tampil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Petugas_Tampil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(Petugas_Tampil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(Petugas_Tampil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(Petugas_Tampil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(Petugas_Tampil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new Petugas_Tampil().setVisible(true);
+//            }
+//        });
+//    }
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Petugas_Tampil().setVisible(true);
-            }
-        });
+    public JTable getjTable1() {
+        return TablePet;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Back;
+    private javax.swing.JMenu Edit;
+    private javax.swing.JMenu Hapus;
+    private javax.swing.JTable TablePet;
+    private javax.swing.JMenu Tambah;
+    private javax.swing.JMenu Tampil;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

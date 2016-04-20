@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JMenu;
 
 /**
  *
@@ -16,6 +17,23 @@ import javax.swing.JComboBox;
  */
 public class TempatPariwisata_Edit extends javax.swing.JFrame {
 
+    public JMenu getEdit() {
+        return Edit;
+    }
+
+    public JMenu getHapus() {
+        return Hapus;
+    }
+
+    public JMenu getTambah() {
+        return Tambah;
+    }
+
+    public JMenu getTampil() {
+        return Tampil;
+    }
+
+    
     public JButton getBtnAdd() {
         return BtnAdd;
     }
@@ -52,24 +70,28 @@ public class TempatPariwisata_Edit extends javax.swing.JFrame {
         Kotatempat.setText(kota);
     }
     
-    public Integer getHarga(){
-        return Hargatempat.getInteger();
+    public String getHarga(){
+        return Hargatempat.getText();
     }
-    public void setHarga(Integer harga){
-        Hargatempat.setInt(harga);
+    public void setHarga(String harga){
+        Hargatempat.setText(harga);
     }
     
      public void addListener(ActionListener e){
         BtnAdd.addActionListener(e);
         BtnCari.addActionListener(e);
         CombJenis.addActionListener(e);
+        Tambah.addActionListener(e);
+        Edit.addActionListener(e);
+        Hapus.addActionListener(e);
+        Tampil.addActionListener(e); 
     }
     
-    public void addAdapter(MouseAdapter e){
-        BtnAdd.addMouseListener(e);
-        BtnCari.addMouseListener(e);
-        CombJenis.addMouseListener(e);
-    }
+//    public void addAdapter(MouseAdapter e){
+//        BtnAdd.addMouseListener(e);
+//        BtnCari.addMouseListener(e);
+//        CombJenis.addMouseListener(e);
+//    }
     /**
      * Creates new form TempatPariwisata_Edit
      */
@@ -100,10 +122,10 @@ public class TempatPariwisata_Edit extends javax.swing.JFrame {
         Hargatempat = new javax.swing.JTextField();
         BtnAdd = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
+        Tambah = new javax.swing.JMenu();
+        Edit = new javax.swing.JMenu();
+        Hapus = new javax.swing.JMenu();
+        Tampil = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aplikasi Biro Perjalanan");
@@ -126,17 +148,17 @@ public class TempatPariwisata_Edit extends javax.swing.JFrame {
 
         BtnAdd.setText("Simpan");
 
-        jMenu3.setText("Tambah");
-        jMenuBar1.add(jMenu3);
+        Tambah.setText("Tambah");
+        jMenuBar1.add(Tambah);
 
-        jMenu4.setText("Edit");
-        jMenuBar1.add(jMenu4);
+        Edit.setText("Edit");
+        jMenuBar1.add(Edit);
 
-        jMenu5.setText("Hapus");
-        jMenuBar1.add(jMenu5);
+        Hapus.setText("Hapus");
+        jMenuBar1.add(Hapus);
 
-        jMenu6.setText("Tampil");
-        jMenuBar1.add(jMenu6);
+        Tampil.setText("Tampil");
+        jMenuBar1.add(Tampil);
 
         setJMenuBar(jMenuBar1);
 
@@ -257,20 +279,20 @@ public class TempatPariwisata_Edit extends javax.swing.JFrame {
     private javax.swing.JButton BtnAdd;
     private javax.swing.JButton BtnCari;
     private javax.swing.JComboBox<String> CombJenis;
+    private javax.swing.JMenu Edit;
+    private javax.swing.JMenu Hapus;
     private javax.swing.JTextField Hargatempat;
     private javax.swing.JTextField Kotatempat;
     private javax.swing.JTextField Namatempat;
     private javax.swing.JTextField Provtempat;
+    private javax.swing.JMenu Tambah;
+    private javax.swing.JMenu Tampil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

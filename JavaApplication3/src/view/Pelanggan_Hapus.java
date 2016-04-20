@@ -8,12 +8,29 @@ package view;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import javax.swing.JButton;
+import javax.swing.JMenu;
 
 /**
  *
  * @author Name
  */
 public class Pelanggan_Hapus extends javax.swing.JFrame {
+
+    public JMenu getEdit() {
+        return Edit;
+    }
+
+    public JMenu getHapus() {
+        return Hapus;
+    }
+
+    public JMenu getTambah() {
+        return Tambah;
+    }
+
+    public JMenu getTampil() {
+        return Tampil;
+    }
 
     public JButton getBtnHapus() {
         return BtnHapus;
@@ -29,11 +46,12 @@ public class Pelanggan_Hapus extends javax.swing.JFrame {
     
     public void addListener(ActionListener e){
         BtnHapus.addActionListener(e);
+        Tambah.addActionListener(e);
+        Edit.addActionListener(e);
+        Hapus.addActionListener(e);
+        Tampil.addActionListener(e);  
     }
     
-    public void addAdapter(MouseAdapter e){
-        BtnHapus.addMouseListener(e);
-    }
 
     
     /**
@@ -57,10 +75,10 @@ public class Pelanggan_Hapus extends javax.swing.JFrame {
         Idpel = new javax.swing.JTextField();
         BtnHapus = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
+        Tambah = new javax.swing.JMenu();
+        Edit = new javax.swing.JMenu();
+        Hapus = new javax.swing.JMenu();
+        Tampil = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aplikasi Biro Perjalanan");
@@ -78,17 +96,17 @@ public class Pelanggan_Hapus extends javax.swing.JFrame {
 
         BtnHapus.setText("Hapus");
 
-        jMenu3.setText("Tambah");
-        jMenuBar1.add(jMenu3);
+        Tambah.setText("Tambah");
+        jMenuBar1.add(Tambah);
 
-        jMenu4.setText("Edit");
-        jMenuBar1.add(jMenu4);
+        Edit.setText("Edit");
+        jMenuBar1.add(Edit);
 
-        jMenu5.setText("Hapus");
-        jMenuBar1.add(jMenu5);
+        Hapus.setText("Hapus");
+        jMenuBar1.add(Hapus);
 
-        jMenu6.setText("Tampil");
-        jMenuBar1.add(jMenu6);
+        Tampil.setText("Tampil");
+        jMenuBar1.add(Tampil);
 
         setJMenuBar(jMenuBar1);
 
@@ -169,13 +187,17 @@ public class Pelanggan_Hapus extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnHapus;
+    private javax.swing.JMenu Edit;
+    private javax.swing.JMenu Hapus;
     private javax.swing.JTextField Idpel;
+    private javax.swing.JMenu Tambah;
+    private javax.swing.JMenu Tampil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
+
+    public Object getBtnCari() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

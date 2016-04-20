@@ -6,8 +6,10 @@
 package view;
 
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JMenu;
 import javax.swing.JSpinner;
 
 /**
@@ -16,6 +18,19 @@ import javax.swing.JSpinner;
  */
 public class Perjalanan_Tambah extends javax.swing.JFrame {
 
+    public JMenu getHapus() {
+        return Hapus;
+    }
+
+    public JMenu getTambah() {
+        return Tambah;
+    }
+
+    public JMenu getTampil() {
+        return Tampil;
+    }
+
+    
     public JButton getBtnAdd() {
         return BtnAdd;
     }
@@ -40,7 +55,7 @@ public class Perjalanan_Tambah extends javax.swing.JFrame {
         return HargaPorang.getText();
     }
     
-    public void setHargaPerOrang(int Hargaorang){
+    public void setHargaPerOrang(String Hargaorang){
         HargaPorang.setText(Hargaorang);
     }
     
@@ -48,9 +63,18 @@ public class Perjalanan_Tambah extends javax.swing.JFrame {
         return TotalHarga.getText();
     }
     
-    public void setHargaTotal(int Hargatotal){
-        TotalHarga.set(Hargatotal);
+    public void setHargaTotal(String Hargatotal){
+        TotalHarga.setText(Hargatotal);
     }
+    
+    public void addListener(ActionListener e){
+        Tambah.addActionListener(e);
+        Hapus.addActionListener(e);
+        Tampil.addActionListener(e); 
+        BtnAdd.addActionListener(e);
+    }
+    
+    
     /**
      * Creates new form Perjalanan_Tambah
      */
@@ -80,9 +104,9 @@ public class Perjalanan_Tambah extends javax.swing.JFrame {
         TotalHarga = new javax.swing.JTextField();
         BtnAdd = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        Tambah = new javax.swing.JMenu();
+        Hapus = new javax.swing.JMenu();
+        Tampil = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aplikasi Biro Perjalanan");
@@ -110,14 +134,14 @@ public class Perjalanan_Tambah extends javax.swing.JFrame {
             }
         });
 
-        jMenu1.setText("Tambah");
-        jMenuBar1.add(jMenu1);
+        Tambah.setText("Tambah");
+        jMenuBar1.add(Tambah);
 
-        jMenu2.setText("Hapus");
-        jMenuBar1.add(jMenu2);
+        Hapus.setText("Hapus");
+        jMenuBar1.add(Hapus);
 
-        jMenu3.setText("Tampil");
-        jMenuBar1.add(jMenu3);
+        Tampil.setText("Tampil");
+        jMenuBar1.add(Tampil);
 
         setJMenuBar(jMenuBar1);
 
@@ -223,9 +247,12 @@ public class Perjalanan_Tambah extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAdd;
     private javax.swing.JComboBox<String> ComPaket;
+    private javax.swing.JMenu Hapus;
     private javax.swing.JTextField HargaPorang;
     private javax.swing.JTextField Idpel;
     private javax.swing.JSpinner SpinOrang;
+    private javax.swing.JMenu Tambah;
+    private javax.swing.JMenu Tampil;
     private javax.swing.JTextField TotalHarga;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -233,9 +260,6 @@ public class Perjalanan_Tambah extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }
